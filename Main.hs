@@ -22,3 +22,8 @@ elementAt (_:xs) k
 -- 04
 myLength :: [a] -> Int
 myLength = foldl (\acc x -> acc +1) 0
+
+-- 05
+myReverse :: [a] -> [a]
+myReverse [] = []
+myReverse (x:xs) = myReverse xs ++ [x]
