@@ -1,5 +1,5 @@
 main :: IO()
-main = putStrLn "hello 99 problems!"
+main = putStrLn "99 problems!"
 
 -- 01
 myLast :: [a] -> a
@@ -11,11 +11,14 @@ myLast (_:xs) = myLast xs
 myButLast :: [a] -> a
 myButLast = last . init
 
--- 02
-
+-- 03
 elementAt :: [a] -> Int -> a
 elementAt (x:_) 1 = x
 elementAt [] _ = error "empty list"
 elementAt (_:xs) k
   | k < 1 = error "index too big"
   | otherwise = elementAt xs (k - 1)
+
+-- 04
+myLength :: [a] -> Int
+myLength = foldl (\acc x -> acc +1) 0
