@@ -39,6 +39,5 @@ myflatten (Elem x) = [x]
 myflatten (List x) = concatMap myflatten x
 
 -- 08
---compress :: [a] -> [a]
-compress [] = []
+compress :: Eq a => [a] -> [a]
 compress (y:ys) = foldl (\a x -> if x == last a then a else a ++ [x]) [y] ys
